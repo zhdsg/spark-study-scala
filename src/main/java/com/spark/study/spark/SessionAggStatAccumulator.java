@@ -2,19 +2,23 @@ package com.spark.study.spark;
 
 import com.spark.study.constrants.Constants;
 import com.spark.study.utils.StringUtils;
-import org.apache.spark.AccumulableParam;
+import org.apache.spark.AccumulatorParam;
 
 /**
  * session聚合统计Accumlator
  * Created by Administrator on 2018/2/11/011.
  */
-public class SessionAggStatAccumulator  implements AccumulableParam<String,String>{
+public class SessionAggStatAccumulator  implements AccumulatorParam<String> {
+
+
 
 
     @Override
     public String addAccumulator(String s, String s2) {
         return add(s,s2);
     }
+
+
 
     @Override
     public String addInPlace(String r1, String r2) {

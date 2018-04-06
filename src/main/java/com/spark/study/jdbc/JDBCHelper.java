@@ -28,7 +28,7 @@ public class JDBCHelper {
 
     }
     //实现JDBC的单例话
-    private static JDBCHelper instance =null;
+    private volatile static JDBCHelper instance =null;
     private LinkedList<Connection> datasource =new LinkedList<Connection>();
     private JDBCHelper(){
         /**

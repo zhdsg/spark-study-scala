@@ -23,12 +23,15 @@ public interface Constants {
      */
     String SPARK_APP_NAME="UserVisitSessionAnalyzeSpark";
     String FIELD_SESSION_ID ="sessionId";
-    String FIELF_SEARCH_KEY_WORDS="searchKeyWords";
+    String FIELD_SEARCH_KEY_WORDS="searchKeyWords";
     String FIELD_CLICK_CATEGORY_IDS ="clickCategoryIds";
     String FIELD_AGE="age";
     String FIELD_PROFESSIONAL="professional";
     String FIELD_CITY="city";
     String FIELD_SEX="sex";
+    String FIELD_VISIT_LENGTH="visitLength";
+    String FIELD_STEP_LENGTH="stepLength";
+    String FIELD_START_TIME="startTime";
     /**
      * 任务相关常量
      */

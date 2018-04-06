@@ -1,11 +1,12 @@
 package com.spark.study.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 日期时间工具�?
+ * 日期时间工具�?
  * @author Administrator
  *
  */
@@ -15,11 +16,12 @@ public class DateUtils {
 			new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public static final SimpleDateFormat DATE_FORMAT = 
 			new SimpleDateFormat("yyyy-MM-dd");
+
 	
 	/**
-	 * 判断�?个时间是否在另一个时间之�?
-	 * @param time1 第一个时�?
-	 * @param time2 第二个时�?
+	 * 判断�?个时间是否在另一个时间之�?
+	 * @param time1 第一个时�?
+	 * @param time2 第二个时�?
 	 * @return 判断结果
 	 */
 	public static boolean before(String time1, String time2) {
@@ -37,9 +39,9 @@ public class DateUtils {
 	}
 	
 	/**
-	 * 判断�?个时间是否在另一个时间之�?
-	 * @param time1 第一个时�?
-	 * @param time2 第二个时�?
+	 * 判断�?个时间是否在另一个时间之�?
+	 * @param time1 第一个时�?
+	 * @param time2 第二个时�?
 	 * @return 判断结果
 	 */
 	public static boolean after(String time1, String time2) {
@@ -57,10 +59,10 @@ public class DateUtils {
 	}
 	
 	/**
-	 * 计算时间差�?�（单位为秒�?
+	 * 计算时间差�?�（单位为秒�?
 	 * @param time1 时间1
 	 * @param time2 时间2
-	 * @return 差�??
+	 * @return 差�??
 	 */
 	public static int minus(String time1, String time2) {
 		try {
@@ -78,7 +80,7 @@ public class DateUtils {
 	
 	/**
 	 * 获取年月日和小时
-	 * @param datetime 时间（yyyy-MM-dd HH:mm:ss�?
+	 * @param datetime 时间（yyyy-MM-dd HH:mm:ss�?
 	 * @return 结果
 	 */
 	public static String getDateHour(String datetime) {
@@ -89,7 +91,7 @@ public class DateUtils {
 	}  
 	
 	/**
-	 * 获取当天日期（yyyy-MM-dd�?
+	 * 获取当天日期（yyyy-MM-dd�?
 	 * @return 当天日期
 	 */
 	public static String getTodayDate() {
@@ -97,8 +99,8 @@ public class DateUtils {
 	}
 	
 	/**
-	 * 获取昨天的日期（yyyy-MM-dd�?
-	 * @return 昨天的日�?
+	 * 获取昨天的日期（yyyy-MM-dd�?
+	 * @return 昨天的日�?
 	 */
 	public static String getYesterdayDate() {
 		Calendar cal = Calendar.getInstance();
@@ -111,21 +113,36 @@ public class DateUtils {
 	}
 	
 	/**
-	 * 格式化日期（yyyy-MM-dd�?
+	 * 格式化日期（yyyy-MM-dd�?
 	 * @param date Date对象
-	 * @return 格式化后的日�?
+	 * @return 格式化后的日�?
 	 */
 	public static String formatDate(Date date) {
 		return DATE_FORMAT.format(date);
 	}
 	
 	/**
-	 * 格式化时间（yyyy-MM-dd HH:mm:ss�?
+	 * 格式化时间（yyyy-MM-dd HH:mm:ss�?
 	 * @param date Date对象
-	 * @return 格式化后的时�?
+	 * @return 格式化后的时�?
 	 */
 	public static String formatTime(Date date) {
 		return TIME_FORMAT.format(date);
+	}
+
+	/**
+	 * 字符串解析成时间
+	 * @param time
+	 * @return
+	 */
+	public static Date parseTime (String time){
+		try {
+			return TIME_FORMAT.parse(time);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return null;
+
 	}
 	
 }

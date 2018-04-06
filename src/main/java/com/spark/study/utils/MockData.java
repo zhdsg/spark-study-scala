@@ -99,7 +99,7 @@ public class MockData {
 		
 		DataFrame df = sqlContext.createDataFrame(rowsRDD, schema);
 		
-		df.registerTempTable("user_visit_action");  
+		df.registerTempTable("user_visit_action");
 		for(Row _row : df.take(1)) {
 			System.out.println(_row);  
 		}

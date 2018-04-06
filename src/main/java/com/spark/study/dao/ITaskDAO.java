@@ -8,5 +8,5 @@ import com.spark.study.domain.Task;
  */
 public interface ITaskDAO {
 
-    public Task findById(long taskId);
+     Task findById(long taskId);
 }
